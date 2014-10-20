@@ -1,10 +1,13 @@
-<form method="POST" action="{% url 'new' %}">
-	{% csrf_token %}
-	<input type="text" name="text" />
-	<select name="user">
-		{% for user in users %}
-			<option value="{{ user.id }}">{{ user }}</option>
-		{% endfor %}
-	</select>
-	<input type="submit" name="submit" />
-<form>
+{% extends "notes/menu.html" %}
+{% block content %}
+	<form method="POST" action="{% url 'new' %}">
+		{% csrf_token %}
+		<input type="text" name="text" />
+		<select name="user">
+			{% for user in users %}
+				<option value="{{ user.id }}">{{ user }}</option>
+			{% endfor %}
+		</select>
+		<input type="submit" name="submit" />
+	<form>
+{% endblock %}

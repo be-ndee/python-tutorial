@@ -3,6 +3,12 @@ python-tutorial
 
 Repo for learning python and django
 
+## Python
+
+- example codes: general.py
+
+## Django
+
 Print version of django (if installed)
 ``` python -c "import django; print(django.get_version())" ```
 
@@ -64,3 +70,14 @@ There you can create groups, users and objects of the model (Notes)
 - Create folder templates/notes/
 - Create view file index.html in templates/notes/ -> use template-"language"
 - Adjust action to fetch data and give it to the view
+
+### 6. Look & feel
+
+#### Static
+
+- Create static folder in notes (notes/static/)
+- Create folder static/notes/
+
+#### Layout & CSS
+
+- Create style.css in notes/static/notes/

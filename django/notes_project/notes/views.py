@@ -31,7 +31,14 @@ def new(request):
 	return HttpResponse(template.render(context))
 
 def show(request, note_id):
-	return HttpResponse("TODO show note: %s" % note_id)
+	note = Note.objects.get(pk=note_id)
+	if note is None:
+		return redirect('/notes/')
+	template = loader.get_template('notes/show.html')
+	context = RequestContext(request, {
+		'note': note
+	})
+	return HttpResponse(template.render(context))
 
 def edit(request, note_id):
 	note = Note.objects.get(pk=note_id)

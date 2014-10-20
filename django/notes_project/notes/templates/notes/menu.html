@@ -1,0 +1,8 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "notes/style.css" %}" />
+
+<a href="{% url 'index' %}">list notes</a>
+<a href="{% url 'new' %}">new note</a>
+<br/>
+{% block content %}
+{% endblock %}
