@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.contrib.auth.models import User
+from datetime import datetime
 
 from notes.models import Note
 
@@ -11,6 +12,21 @@ def index(request):
 	template = loader.get_template('notes/index.html')
 	context = RequestContext(request, {
 		'note_list': note_list,
+	})
+	return HttpResponse(template.render(context))
+
+def new(request):
+	if request.method == 'POST':
+		note = Note()
+		note.text = request.POST.get('text', '')
+		note.user = User.objects.get(pk=request.POST.get('user', ''))
+		note.date = datetime.now()
+		note.save()
+		return redirect('/notes/')
+	users = User.objects.all()
+	template = loader.get_template('notes/new.html')
+	context = RequestContext(request, {
+		'users': users
 	})
 	return HttpResponse(template.render(context))
 

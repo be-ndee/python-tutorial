@@ -2,7 +2,6 @@
 	{% csrf_token %}
 	<input type="text" name="text" value="{{ note.text }}" />
 	<select name="user">
-		<!-- TODO users -->
 		{% for user in users %}
 			<option value="{{ user.id }}" {% ifequal user.id note.user.id %}selected{% endifequal %}>{{ user }}</option>
 		{% endfor %}
