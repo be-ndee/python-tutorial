@@ -3,7 +3,7 @@
 	<input type="text" name="text" />
 	<select name="user">
 		{% for user in users %}
-		<option value="{{ user.id }}">{{ user }}</option>
+			<option value="{{ user.id }}">{{ user }}</option>
 		{% endfor %}
 	</select>
 	<input type="submit" name="submit" />
