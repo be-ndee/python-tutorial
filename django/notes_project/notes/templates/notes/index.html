@@ -1,9 +1,24 @@
 {% if note_list %}
-	<ul>
-		{% for note in note_list %}
-			<li><a href="{% url 'edit' note.id %}">{{ note.user}} : {{ note.text }}</a></li>
-		{% endfor %}
-	</ul>
+	<table>
+		<thead>
+			<tr>
+				<th>User</th>
+				<th>Text</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for note in note_list %}
+				<tr>
+					<td>{{ note.user }}</td>
+					<td>{{ note.text }}</td>
+					<td><a href="{% url 'show' note.id %}">show</a></td>
+					<td><a href="{% url 'edit' note.id %}">edit</a></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% else %}
 	No note found
 {% endif %}
