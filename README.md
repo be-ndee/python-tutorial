@@ -51,9 +51,15 @@ You can enter the admin panel with the user-pw combination which was set first
 
 There you can create groups, users and objects of the model (Notes)
 
-### 4. Create views
+### 4. Create actions
 
 - Write a action in notes/views.py
-- Create notes/urls.py to add URL configs
-- Create a pattern which calls  the action if it matches on the url
+- Create a pattern in notes/urls.py which calls the action if it matches on the url
 - Add notes-url to notes_project/urls.py
+
+### 5. Create views
+
+- Create templates folder in notes (notes/templates/)
+- Create folder templates/notes/
+- Create view file index.html in templates/notes/ -> use template-"language"
+- Adjust action to fetch data and give it to the view
