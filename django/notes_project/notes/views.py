@@ -33,4 +33,6 @@ def edit(request, note_id):
 	return HttpResponse(template.render(context))
 
 def delete(request, note_id):
-	return HttpResponse("TODO delete note: %s" % note_id)
+	note = Note.objects.get(pk=note_id)
+	note.delete()
+	return redirect('/notes/')
