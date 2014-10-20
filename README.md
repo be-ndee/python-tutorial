@@ -41,13 +41,16 @@ To run the commands and create models use
 With the interactive shell you can test your models
 ```python manage.py shell```
 
-For example fetch all notes use
-```Note.objects.all()```
+For example fetcha all notes use
+```Note.objects.all()
+```
+
 
 ### 3. Use admin panel
 
 You can enter the admin panel with the user-pw combination which was set first
-```http://localhost:8000/admin```
+```http://localhost:8000/admin
+```
 
 There you can create groups, users and objects of the model (Notes)
 
