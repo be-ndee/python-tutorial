@@ -4,21 +4,21 @@ python-tutorial
 Repo for learning python and django
 
 Print version of django (if installed)
-```python -c "import django; print(django.get_version())"```
+``` python -c "import django; print(django.get_version())" ```
 
 ### 1. Setup
 
 Create new django-project
-```django-admin.py startproject notes_project```
+``` django-admin.py startproject notes_project ```
 
 Run server
-```python manage.py runserver```
+``` python manage.py runserver ```
 
 Sync database (first time create user)
-```python manage.py syncdb```
+``` python manage.py syncdb ```
 
 Create new app
-```python manage.py startapp notes```
+``` python manage.py startapp notes ```
 
 ### 2. Create Models
 
@@ -33,21 +33,22 @@ Note
 ```
 
 Output the statement to create model-tables
-```python manage.py sql notes```
+``` python manage.py sql notes ```
 
 To run the commands and create models use
-```python manage.py syncdb```
+``` python manage.py syncdb ```
 
 With the interactive shell you can test your models
-```python manage.py shell```
+``` python manage.py shell ```
 
 For example fetch all notes use
-```Note.objects.all()```
+``` Note.objects.all() ```
+
 
 ### 3. Use admin panel
 
 You can enter the admin panel with the user-pw combination which was set first
-```http://localhost:8000/admin```
+``` http://localhost:8000/admin ```
 
 There you can create groups, users and objects of the model (Notes)
 
